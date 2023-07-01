@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arithmetic Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        /* label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        } */
+
+        input[type="text"],
+        select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 150px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* .result-label {
+            font-weight: bold;
+            margin-top: 10px;
+        } */
+
+        /* .result-value {
+            font-size: 16px;
+            color: #333;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="input-container">
+        <label for="num1">Number 1:</label>
+        <input type="text" id="num1" oninput="performOperation()" onblur="validateNumber(this)">
+        <span id="num1Error" class="error-message"></span>
+    </div>
+
+    <div class="input-container">
+        <label for="num2">Number 2:</label>
+        <input type="text" id="num2" oninput="performOperation()" onblur="validateNumber(this)">
+        <span id="num2Error" class="error-message"></span>
+    </div>
+        <label>Result:</label>
+        <br>
+        <label id="msg1" class="result-value"></label>
+        <br>
+        <label id="msg2" class="result-value"></label>
+        <br>        
+        <label id="msg3" class="result-value"></label>
+        <br>
+        <label id="msg4" class="result-value"></label>
+        <br>
+        <label id="msg5" class="result-value"></label>
+    <!-- </div> -->
+
+    <script>
+        function validateNumber(input) {
+            var inputValue = input.value;
+            var errorLabel = document.getElementById(input.id + "Error");
+
+            if (isNaN(inputValue)) {
+                errorLabel.innerHTML = "* Please enter a valid number.";
+                errorLabel.style.color = "red";
+            } else {
+                errorLabel.innerHTML = "";
+            }
+        }
+        function performOperation()
+        {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var errorLabel = document.getElementById("msg1")
+
+            var resultLabel1 = document.getElementById("msg1");
+            var resultLabel2 = document.getElementById("msg2");
+            var resultLabel3 = document.getElementById("msg3");
+            var resultLabel4 = document.getElementById("msg4");
+            var resultLabel5 = document.getElementById("msg5");
+
+            var result1 = num1 + num2;
+            var result2 = num1 * num2;
+            var result3 = num1 - num2;
+            var result4 = num1 / num2;
+            var result5 = num1 % num2;
+            resultLabel1.innerHTML = "Addition of two number       : " + result1;
+            resultLabel2.innerHTML = "Multiplication of two number : " + result2;
+            resultLabel3.innerHTML = "Substraction of two number   : " + result3;
+            resultLabel4.innerHTML = "Division of two number       : " + result4;
+            resultLabel5.innerHTML = "Modulo of two number         : " + result5;
+
+        }
+
+        
+    </script>
+</body>
+
+</html>

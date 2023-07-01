@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+    <style>
+        .calculator
+        {
+            text-align: center;
+            border: 5px solid black;
+            width: 500px;
+            border-radius: 30px;
+        }
+        .button {
+            padding: 5px 10px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #04AA6D;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #3e8e41}
+
+        .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        }
+
+        .inp{
+            /* margin-left: 40px; */
+            padding: 20px;
+            /* border: ; */
+            width: 400px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+
+    <!-- <h2>Enter First Number</h2> -->
+    <br>
+    <input type="text" id="num1" class="inp" placeholder="Enter First number" />
+    <br>
+    <br>
+    <!-- <h2>Enter Second Number</h2> -->
+    <input type="text" id="num2" class="inp" placeholder="Enter second number" />
+    <br /><br />
+    <label id="msg"></label>
+    <br><br>
+    <!-- <div class="button"> -->
+    <button class="button" onclick="add()">Add</button>
+    <button class="button" onclick="sub()">Subtract</button>
+    <button class="button" onclick="mul()">Multiply</button>
+    <button class="button" onclick="div()">Divide</button>
+    <button class="button" onclick="mod()">Modulo</button>
+    <!-- </div> -->
+    <br /><br />
+</div>
+    <script>
+        function add()
+        {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var result = document.getElementById("msg");
+
+            // Check for required input
+            if (num1 === '' || num2 === '') {
+                result.innerHTML = "* All fields are required.";
+                result.style.color = "red";
+                return;
+            }
+
+            // Check for numeric values
+            if (isNaN(num1) || isNaN(num2)) {
+                result.innerHTML = "* Only numeric values are allowed.";
+                result.style.color = "red";
+                return;
+            }
+
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            var operationResult;
+            operationResult = num1 + num2;
+            result.innerHTML = "Result: " + operationResult;
+        }
+        function sub() {
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+                var result = document.getElementById("msg");
+
+                // Check for required input
+                if (num1 === '' || num2 === '') {
+                    result.innerHTML = "* All fields are required.";
+                    result.style.color = "red";
+                    return;
+                }
+
+                // Check for numeric values
+                if (isNaN(num1) || isNaN(num2)) {
+                    result.innerHTML = "* Only numeric values are allowed.";
+                    result.style.color = "red";
+                    return;
+                }
+
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+                var operationResult;
+                operationResult = num1 - num2;
+                result.innerHTML = "Result: " + operationResult;
+            }
+            function mul() {
+                    var num1 = document.getElementById("num1").value;
+                    var num2 = document.getElementById("num2").value;
+                    var result = document.getElementById("msg");
+
+                    // Check for required input
+                    if (num1 === '' || num2 === '') {
+                        result.innerHTML = "* All fields are required.";
+                        result.style.color = "red";
+                        return;
+                    }
+
+                    // Check for numeric values
+                    if (isNaN(num1) || isNaN(num2)) {
+                        result.innerHTML = "* Only numeric values are allowed.";
+                        result.style.color = "red";
+                        return;
+                    }
+
+                    num1 = parseFloat(num1);
+                    num2 = parseFloat(num2);
+                    var operationResult;
+                    operationResult = num1 * num2;
+                    result.innerHTML = "Result: " + operationResult;
+                }
+                function div() {
+                        var num1 = document.getElementById("num1").value;
+                        var num2 = document.getElementById("num2").value;
+                        var result = document.getElementById("msg");
+
+                        // Check for required input
+                        if (num1 === '' || num2 === '') {
+                            result.innerHTML = "* All fields are required.";
+                            result.style.color = "red";
+                            return;
+                        }
+
+                        // Check for numeric values
+                        if (isNaN(num1) || isNaN(num2)) {
+                            result.innerHTML = "* Only numeric values are allowed.";
+                            result.style.color = "red";
+                            return;
+                        }
+
+                        num1 = parseFloat(num1);
+                        num2 = parseFloat(num2);
+                        var operationResult;
+                        operationResult = num1 / num2;
+                        result.innerHTML = "Result: " + operationResult;
+                    }
+                    function mod() {
+                            var num1 = document.getElementById("num1").value;
+                            var num2 = document.getElementById("num2").value;
+                            var result = document.getElementById("msg");
+
+                            // Check for required input
+                            if (num1 === '' || num2 === '') {
+                                result.innerHTML = "* All fields are required.";
+                                result.style.color = "red";
+                                return;
+                            }
+
+                            // Check for numeric values
+                            if (isNaN(num1) || isNaN(num2)) {
+                                result.innerHTML = "* Only numeric values are allowed.";
+                                result.style.color = "red";
+                                return;
+                            }
+
+                            num1 = parseFloat(num1);
+                            num2 = parseFloat(num2);
+                            var operationResult;
+                            operationResult = num1 % num2;
+                            result.innerHTML = "Result: " + operationResult;
+                        }
+    </script>
+</body>
+</html>
